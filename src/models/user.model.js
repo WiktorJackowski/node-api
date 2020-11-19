@@ -10,15 +10,14 @@ let User = function (user) {
 
 User.findAll = function (result) {
     dbConn.query("Select * from `user`", function (err, res) {
-        if(err) {
+        if (err) {
             console.log("error: ", err);
             result(null, err);
-        }
-        else{
+        } else {
             console.log('employees : ', res);
             result(null, res);
         }
     });
 };
 
-module.exports= User;
+module.exports = User;
