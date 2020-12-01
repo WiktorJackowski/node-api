@@ -14,10 +14,20 @@ User.findAll = function (result) {
             console.log("error: ", err);
             result(null, err);
         } else {
-            console.log('employees : ', res);
             result(null, res);
         }
     });
 };
+
+User.login = function (email, password, result) {
+    dbConn.query("Select * from `user` where email = ? and password = ?", [email, password], function (err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+        } else {
+            result(null, res);
+        }
+    });
+}
 
 module.exports = User;

@@ -1,7 +1,13 @@
 const express = require('express')
 const router = express.Router()
+const cors = require('cors')
+
+router.use(cors());
+
 const userController = require('../controllers/user.controller');
-// Retrieve all employees
+
 router.get('/', userController.findAll);
+
+router.post('/login', userController.login);
 
 module.exports = router;
