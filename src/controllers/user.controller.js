@@ -10,6 +10,16 @@ exports.findAll = function(req, res) {
     });
 };
 
+exports.register = function (req, res) {
+    User.register(req.body.name, req.body.surname, req.body.email, req.body.password, function(err, user) {
+        console.log('controller')
+        if (err)
+            res.send(err);
+        console.log('res', user);
+        res.send(user);
+    });
+}
+
 exports.login = function (req, res) {
     User.login(req.body.email, req.body.password, function(err, user) {
         console.log('controller')
