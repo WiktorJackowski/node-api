@@ -2,6 +2,7 @@
 let dbConn = require('./../../config/db.config');
 //User object create
 let User = function (user) {
+    this.id = user.id;
     this.name = user.name;
     this.surname = user.surname;
     this.email = user.email;

@@ -15,8 +15,10 @@ app.get('/', (req, res) => {
 
 // Require user routes
 const usersRoutes = require('./src/routes/user.routes')
+const chatRoutes = require('./src/routes/chat.routes')
 // using as middleware
 app.use('/api/users', usersRoutes)
+app.use('/api/chats', chatRoutes)
 
 
 // listen for requests
