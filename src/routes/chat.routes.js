@@ -6,6 +6,6 @@ router.use(cors());
 
 const chatController = require('../controllers/chat.controller');
 
-router.get('/open-chat', chatController.getChat);
+router.post('/open-chat', chatController.getChat);
 
 module.exports = router;
